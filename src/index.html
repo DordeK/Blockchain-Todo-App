@@ -55,19 +55,22 @@
             <p class="text-center">Loading...</p>
           </div>
           <div id="content">
-            <!-- <form onSubmit="App.createTask(); return false;">
+            <form onSubmit="app.createTask(); return false;">
               <input id="newTask" type="text" class="form-control" placeholder="Add task..." required>
               <input type="submit" hidden="">
-            </form> -->
+            </form>
             <ul id="taskList" class="list-unstyled">
+              <h1>todos:</h1>
               <div class="taskTemplate" class="checkbox" style="display: none">
                 <label>
-                  <input type="checkbox" />
+                  <input type="checkbox" onclick="app.checkboxClick(event)" />
                   <span class="content">Task content goes here...</span>
                 </label>
               </div>
             </ul>
+            <br>
             <ul id="completedTaskList" class="list-unstyled">
+              <h1>completed tasks</h1>
             </ul> 
           </div>
         </main>
@@ -78,7 +81,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="vendor/truffle-contract/dist/truffle-contract.js"></script>
+    <script src="vendor/web3/dist/web3.min.js"></script>
+    <script src="vendor/@truffle/contract/dist/truffle-contract.min.js"></script>
+    <script src="vendor/@truffle/contract/dist/truffle-contract.js"></script>
+
     <script src="app.js"></script>
   </body>
 </html>

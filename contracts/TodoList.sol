@@ -16,10 +16,17 @@ contract TodoList {
         bool completed;
     }
 
+    // like array
     mapping(uint256 => Task) public tasks;
+    event TaskCreated(uint256 id, string content, bool completed);
 
     function createTask(string memory _context) public {
         tasks[tasksCount] = Task(tasksCount, _context, false);
+        emit TaskCreated(tasksCount, _context, false);
         tasksCount++;
+    }
+
+    function completeTask(uint256 id, bool completed) public {
+        tasks[id] = Task(id, tasks[id].context, completed);
     }
 }
